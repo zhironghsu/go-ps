@@ -1,3 +1,4 @@
+//go:build windows
 // +build windows
 
 package ps
@@ -6,11 +7,13 @@ import (
 	"fmt"
 	"syscall"
 	"unsafe"
+
+	"golang.org/x/sys/windows"
 )
 
 // Windows API functions
 var (
-	modKernel32                  = syscall.NewLazyDLL("kernel32.dll")
+	modKernel32                  = windows.NewLazySystemDLL("kernel32.dll")
 	procCloseHandle              = modKernel32.NewProc("CloseHandle")
 	procCreateToolhelp32Snapshot = modKernel32.NewProc("CreateToolhelp32Snapshot")
 	procProcess32First           = modKernel32.NewProc("Process32FirstW")

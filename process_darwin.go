@@ -1,9 +1,10 @@
+//go:build darwin
 // +build darwin
 
 package ps
 
 import (
-	"github.com/keybase/go-ps/darwincgo"
+	"github.com/zhironghsu/go-ps/darwincgo"
 )
 
 func findProcess(pid int) (Process, error) {

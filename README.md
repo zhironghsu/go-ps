@@ -27,5 +27,5 @@ How it works:
 Install using standard `go get`:
 
 ```
-$ go get github.com/keybase/go-ps
+$ go get github.com/zhironghsu/go-ps
 ```
